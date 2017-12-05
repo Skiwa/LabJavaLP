@@ -1,0 +1,1 @@
+//Hérite de Exception

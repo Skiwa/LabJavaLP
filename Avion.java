@@ -18,7 +18,11 @@ public abstract class Avion{
     return quantiteEssence;
   }
 
+  public int getNumSerie(){
+    return numeroSerie;
+  }
+
   public String toString(){
-    return ("Numero de série: "+numeroSerie+", de type : "+typeAvion+".Essence : "+quantiteEssence);
+    return ("Avion de type "+typeAvion+ ", numero de serie: "+numeroSerie+", essence : "+quantiteEssence);
   }
 }

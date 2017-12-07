@@ -10,6 +10,8 @@ public class Controleur{
     atterir(2,1);
     atterir(3,2);
 
+    new Ciel().start();
+
   }
 
   public static void survoler(){
@@ -30,7 +32,7 @@ public class Controleur{
     //TODO:
     //-Vérifier avec numPiste.isOccupee() si la piste est occupée
     //-Si oui, écrasement de l'avion
-    //-Si non, retirer l'avion du ciel
+    //-Si non, retirer l'avion du ciel avec .supprCiel(numSerie)
             // ajouter l'avion avec numPiste.ajouter(numSerie)
             // lancement de survoler()
   }

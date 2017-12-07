@@ -12,7 +12,7 @@ public class Controleur{
 
   }
 
-  public void survoler(){
+  public static void survoler(){
     //Fait survoler tous les avions
     //Si un avion a plus d'essence, il s'ecrase (lancement exception)
     //Chaque avion atteri sur une piste avance d'un tour
@@ -25,7 +25,7 @@ public class Controleur{
     //-Pour chaque piste, faire avancer l'avion d'un tour avec piste[i].tour()
   }
 
-  public void atterir(int numSerie, int numPiste){
+  public static void atterir(int numSerie, int numPiste){
 
     //TODO:
     //-Vérifier avec numPiste.isOccupee() si la piste est occupée

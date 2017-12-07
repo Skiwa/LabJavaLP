@@ -8,6 +8,17 @@ public abstract class Avion{
     this.quantiteEssence=quantiteEssence;
     this.typeAvion=typeAvion;
     this.numeroSerie=numeroSerie;
+  }
 
+  public void consommeEssence(){
+    quantiteEssence--;
+  }
+
+  public int getEssence(){
+    return quantiteEssence;
+  }
+
+  public String toString(){
+    return ("Numero de série: "+numeroSerie+", de type : "+typeAvion+".Essence : "+quantiteEssence);
   }
 }

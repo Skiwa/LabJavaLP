@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 public class Ciel extends Thread{
     int lieuAtterrisage;
-    //ArrayList<Avion> avionsCiel=new ArrayList<Avion>();
     Map<Integer,Avion> avionsCiel = new HashMap<Integer, Avion>();
 
     public Ciel(){
@@ -49,7 +48,3 @@ public class Ciel extends Thread{
     }
 
 }
-
-//TODO:
-//- Créer une méthode qui supprime un avion dans le ciel avec son num de série
-//- Créer un nom de variable avec le numero de serie

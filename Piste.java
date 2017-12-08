@@ -3,7 +3,7 @@
 
 public class Piste{
   private Avion avion;
-  private int nbToursRestants;
+  private int nbTours;
   private int numPiste;
 
   public Piste(int numPiste){
@@ -12,17 +12,12 @@ public class Piste{
 
   public void ajouter(Avion avion){
     this.avion=avion;
-    nbToursRestants=5;
+    nbTours=0;
     System.out.println("Avion "+avion+" a attteri sur la piste "+numPiste+".");
   }
 
   public void tour(){
-    nbToursRestants--;
-    if(nbToursRestants==0){
-      System.out.println("Avion "+avion+" a fait tous les tours necessaires.");
-    }else{
-      System.out.println("Il reste "+nbToursRestants+" tours pour l'avion "+avion);
-    }
+    nbTours++;
   }
 
   //retourne vrai si un avion est sur la piste
@@ -30,8 +25,8 @@ public class Piste{
     return(this.avion==null) ? false : true;
   }
 
-  public int getToursRestants(){
-    return nbToursRestants;
+  public int getTours(){
+    return nbTours;
   }
 
   public Avion getAvion(){
@@ -39,7 +34,7 @@ public class Piste{
   }
 
   public String toString(){
-    return ("Piste numéro "+numPiste+" contient l'avion "+avion+".Il doit faire "+ nbToursRestants+" tours.");
+    return ("Piste numéro "+numPiste+" contient l'avion "+avion+".Il a fait "+ nbTours+" tours.");
   }
 
 

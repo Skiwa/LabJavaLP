@@ -14,7 +14,7 @@ public class Aeroport{
     String string=new String();
     for (int i=0;i<3;i++){
       if (piste[i].isOccupee()){
-        string+="("+i+") Occupee : "+piste[i].getAvion().toString()+"\n";
+        string+="("+i+") Occupee : "+piste[i].getAvion().toString()+" ("+piste[i].getTours()+"/5 tours)\n";
       }else{
         string+="("+i+") Libre \n";
       }
@@ -24,5 +24,12 @@ public class Aeroport{
 
   public Piste getPiste(int numPiste){
     return piste[numPiste];
+  }
+
+  public void tourPistes(){
+    for (int i=0;i<3;i++){
+      if(piste[i].isOccupee())
+        piste[i].tour();
+    }
   }
 }

@@ -51,7 +51,12 @@ public class Ciel extends Thread{
 
     //Fait consommer a tous les avions dans le ciel une unité d'essence
     public static void tourCiel(){
-        System.out.println("tourCiel");
+        for (Integer mapKey : avionsCiel.keySet()) {
+        	avionsCiel.get(mapKey).consommeEssence();
+
+          //TODO: Gérer une exception si le niveau d'essence est à 0
+        }
+
     }
 
     //Renvoie la liste des avions dans le ciel

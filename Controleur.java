@@ -36,7 +36,12 @@ public class Controleur{
       input=sc.next();
       switch(input){
         case "1":
-          //stuff
+          //TODO: Ranger ca dans la fonction survoler()
+          //--
+          //Fait consommer de l'essence à tous les avions et lance une exception si essence=0
+          Ciel.tourCiel();
+          //Fait avancer tous les avions sur les pistes
+          aeroport.tourPistes();
         break;
         case "2":
           System.out.println("Entrer le noSerie de l'avion :");
@@ -45,6 +50,7 @@ public class Controleur{
           inputPiste=sc.next();
 
           //TODO: Ranger ca dans la fonction atterir()
+          //--
           //ajoute à une piste un avion récupéré du ciel
           aeroport.getPiste(Integer.parseInt(inputPiste)).ajouter(Ciel.getAvion(Integer.parseInt(inputSerie)));
           //supprime l'avion du ciel

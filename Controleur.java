@@ -62,12 +62,7 @@ public class Controleur{
         break;
       }
     }
-
-
-
-
-
-
+    //
   }
 
   public static void survoler(){

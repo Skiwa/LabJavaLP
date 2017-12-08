@@ -50,11 +50,14 @@ public class Ciel extends Thread{
     }
 
     //Fait consommer a tous les avions dans le ciel une unit√© d'essence
-    public static void tourCiel(){
+    public static void tourCiel() throws EcrasementAvionException{
         for (Integer mapKey : avionsCiel.keySet()) {
         	avionsCiel.get(mapKey).consommeEssence();
-
+        	
           //TODO: G√©rer une exception si le niveau d'essence est √† 0
+        	if(avionsCiel.get(mapKey).getEssence() < 0){
+        		throw new EcrasementAvionException("L'avion n∞ "+avionsCiel.get(mapKey).getNumSerie()+" s'est ÈcrasÈ !");
+        	}
         }
 
     }

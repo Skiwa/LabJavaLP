@@ -21,4 +21,8 @@ public class Aeroport{
     }
     return string;
   }
+
+  public Piste getPiste(int numPiste){
+    return piste[numPiste];
+  }
 }

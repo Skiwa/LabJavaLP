@@ -5,6 +5,8 @@ public class Controleur{
   public static void main(String args[]){
     Scanner sc=new Scanner(System.in);
     String input=new String();
+    String inputSerie=new String();
+    String inputPiste=new String();
 
     //création de l'aéroport et des pistes
     Aeroport aeroport=new Aeroport();
@@ -15,32 +17,44 @@ public class Controleur{
     try{Thread.sleep(10);}catch(InterruptedException e){}
 
 
-    System.out.println("***************************************************");
-    System.out.println("Avions en survol :");
-    System.out.println(Ciel.afficheCiel());
-    System.out.println("Etat des pistes");
-    System.out.println(aeroport.toString());
-    System.out.println("***************************************************");
-    System.out.println();
-    System.out.println("***************************************************");
-    System.out.println("1) Faire survoler les avions");
-    System.out.println("2) Faire atterir un avion");
-    System.out.println("0) Fin de la journée de travail!");
-    System.out.println("***************************************************");
-    System.out.println("Votre choix?");
+    while(true){
+      System.out.println("***************************************************");
+      System.out.println("Avions en survol :");
+      System.out.println(Ciel.afficheCiel());
+      System.out.println("Etat des pistes");
+      System.out.println(aeroport.toString());
+      System.out.println("***************************************************");
+      System.out.println();
+      System.out.println("***************************************************");
+      System.out.println("1) Faire survoler les avions");
+      System.out.println("2) Faire atterir un avion");
+      System.out.println("0) Fin de la journee de travail!");
+      System.out.println("***************************************************");
+      System.out.println("Votre choix?");
 
-    //Saisie utilisateur
-    input=sc.next();
-    switch(input){
-      case "1":
-        //stuff
-      break;
-      case "2":
-        //stuff
-      break;
-      case "0":
-        //stuff
-      break;
+      //Saisie utilisateur
+      input=sc.next();
+      switch(input){
+        case "1":
+          //stuff
+        break;
+        case "2":
+          System.out.println("Entrer le noSerie de l'avion :");
+          inputSerie=sc.next();
+          System.out.println("Entrer le no de la piste :");
+          inputPiste=sc.next();
+
+          //TODO: Ranger ca dans la fonction atterir()
+          //ajoute à une piste un avion récupéré du ciel
+          aeroport.getPiste(Integer.parseInt(inputPiste)).ajouter(Ciel.getAvion(Integer.parseInt(inputSerie)));
+          //supprime l'avion du ciel
+          Ciel.supprAvion(Integer.parseInt(inputSerie));
+
+        break;
+        case "0":
+          //stuff
+        break;
+      }
     }
 
 

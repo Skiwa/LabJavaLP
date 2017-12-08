@@ -36,14 +36,13 @@ public class Ciel extends Thread{
           //Pause entre chaque génération
           int sleep=(int) Math.floor(Math.random() * 5000);
           Thread.sleep(sleep);
-
         }
       }catch(InterruptedException e){}
 
     }
 
     //Supprime un avion du ciel avec son numero de série
-    public void supprCiel(int numeroSerie){
+    public static void supprAvion(int numeroSerie){
         avionsCiel.remove(numeroSerie);
         for (Integer mapKey : avionsCiel.keySet()) {
         	avionsCiel.get(mapKey).consommeEssence();
@@ -68,6 +67,11 @@ public class Ciel extends Thread{
     //Nombre d'avions dans le ciel
     public static int nbCiel(){
       return avionsCiel.size();
+    }
+
+    //Retourne avion via numéro de série
+    public static Avion getAvion(int numeroSerie){
+      return avionsCiel.get(numeroSerie);
     }
 
 }

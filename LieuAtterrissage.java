@@ -1,6 +1,6 @@
 //Interface
 public interface LieuAtterrissage{
-  //Contient la mÃ©thode survoler() de la classe Ciel
+  //Contient la méthode survoler() de la classe Ciel
 	
 }
 

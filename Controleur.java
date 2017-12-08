@@ -76,6 +76,7 @@ public class Controleur{
     //TODO:
     //-Leur enlever 1 d'essence avec .consommeEssence()
     //-Ecrasement de l'avion si plus d'essence, verification avec .getEssence()
+    //Renvoyer l'exception si écrasement de l'avion 
     //-Pour chaque piste, faire avancer l'avion d'un tour avec piste[i].tour()
   }
 

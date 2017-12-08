@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Controleur{
 
-  public static void main(String args[]){
+  public static void main(String args[]) throws EcrasementAvionException{
     Scanner sc=new Scanner(System.in);
     String input=new String();
     String inputSerie=new String();
@@ -65,7 +65,7 @@ public class Controleur{
     //
   }
 
-  public static void survoler(){
+  public static void survoler() throws EcrasementAvionException{
     Ciel.tourCiel();
 
     //Fait survoler tous les avions

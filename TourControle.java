@@ -1,7 +1,6 @@
 //Interface
 public interface TourControle{
 	//Afficher l’aéroport ou Ciel ?->liste des avions
-	public String afficheCiel();
 	
 	//Faire atterrir un avion (supprimer du ciel)
 	public void atterir(int numSerie, int numPiste);

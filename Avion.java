@@ -23,6 +23,6 @@ public abstract class Avion{
   }
 
   public String toString(){
-    return ("Avion de type "+typeAvion+ ", numero de serie: "+numeroSerie+", essence : "+quantiteEssence);
+    return ("(NS:"+numeroSerie+", ESS:"+quantiteEssence+") Avion de type "+typeAvion);
   }
 }

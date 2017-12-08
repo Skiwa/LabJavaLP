@@ -9,4 +9,16 @@ public class Aeroport{
       piste[i]=new Piste(i);
     }
   }
+
+  public String toString(){
+    String string=new String();
+    for (int i=0;i<3;i++){
+      if (piste[i].isOccupee()){
+        string+="("+i+") Occupee : "+piste[i].getAvion().toString()+"\n";
+      }else{
+        string+="("+i+") Libre \n";
+      }
+    }
+    return string;
+  }
 }

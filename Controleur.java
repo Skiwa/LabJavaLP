@@ -4,7 +4,10 @@ public class Controleur{
 
   public static void main(String args[]){
     Scanner sc=new Scanner(System.in);
-    int input;
+    String input=new String();
+
+    //création de l'aéroport et des pistes
+    Aeroport aeroport=new Aeroport();
 
     //création du thread Ciel
     new Ciel().start();
@@ -16,9 +19,7 @@ public class Controleur{
     System.out.println("Avions en survol :");
     System.out.println(Ciel.afficheCiel());
     System.out.println("Etat des pistes");
-    System.out.println("(0)");  //todo
-    System.out.println("(1)");  //todo
-    System.out.println("(2)");  //todo
+    System.out.println(aeroport.toString());
     System.out.println("***************************************************");
     System.out.println();
     System.out.println("***************************************************");
@@ -31,13 +32,13 @@ public class Controleur{
     //Saisie utilisateur
     input=sc.next();
     switch(input){
-      case 1:
+      case "1":
         //stuff
       break;
-      case 2:
+      case "2":
         //stuff
       break;
-      case 0:
+      case "0":
         //stuff
       break;
     }

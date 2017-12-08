@@ -2,7 +2,7 @@
 //Contient les méthodes atterir() et ajouter()
 
 public class Piste{
-  private int avion=0;  //contient la ref de l'avion ou 0
+  private Avion avion;
   private int nbToursRestants;
   private int numPiste;
 
@@ -10,7 +10,7 @@ public class Piste{
     this.numPiste=numPiste;
   }
 
-  public void ajouter(int avion){
+  public void ajouter(Avion avion){
     this.avion=avion;
     nbToursRestants=5;
     System.out.println("Avion "+avion+" a attteri sur la piste "+numPiste+".");
@@ -27,12 +27,17 @@ public class Piste{
 
   //retourne vrai si un avion est sur la piste
   public boolean isOccupee(){
-    return(this.avion==0) ? false : true;
+    return(this.avion==null) ? false : true;
   }
 
   public int getToursRestants(){
     return nbToursRestants;
   }
+
+  public Avion getAvion(){
+    return avion;
+  }
+
   public String toString(){
     return ("Piste numéro "+numPiste+" contient l'avion "+avion+".Il doit faire "+ nbToursRestants+" tours.");
   }

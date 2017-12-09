@@ -48,13 +48,8 @@ public class Controleur{
           inputSerie=sc.next();
           System.out.println("Entrer le no de la piste :");
           inputPiste=sc.next();
-
-          //TODO: Ranger ca dans la fonction atterir()
-          //--
-          //ajoute Ã  une piste un avion rÃ©cupÃ©rÃ© du ciel
-          aeroport.getPiste(Integer.parseInt(inputPiste)).ajouter(Ciel.getAvion(Integer.parseInt(inputSerie)));
-          //supprime l'avion du ciel
-          Ciel.supprAvion(Integer.parseInt(inputSerie));
+          
+          atterir(Integer.parseInt(inputSerie),Integer.parseInt(inputPiste),aeroport);
 
         break;
         case "0":
@@ -80,12 +75,20 @@ public class Controleur{
     //-Pour chaque piste, faire avancer l'avion d'un tour avec piste[i].tour()
   }
 
-  public static void atterir(int numSerie, int numPiste){
+  public static void atterir(int numSerie, int numPiste, Aeroport aeroport) throws EcrasementAvionException{
+	  
+	  if (aeroport.getPiste(numPiste).isOccupee())
+		  throw new EcrasementAvionException("L'avion n° "+Ciel.getAvion(numSerie).getNumSerie()+" s'est écrasé sur l'avion n°"+aeroport.getPiste(numPiste).getAvion().getNumSerie()+" sur la piste "+numPiste);
+	  
+	//ajoute Ã  une piste un avion rÃ©cupÃ©rÃ© du ciel
+      aeroport.getPiste(numPiste).ajouter(Ciel.getAvion(numSerie));
+      //supprime l'avion du ciel
+      Ciel.supprAvion(numSerie);
+      
 
     //TODO:
     //-VÃ©rifier avec numPiste.isOccupee() si la piste est occupÃ©e
     //-Si oui, Ã©crasement de l'avion
-	//->throw new EcrasementAvionException("L'avion n° "+avionsCiel.get(mapKey).getNumSerie()+" s'est écrasé !");
     //-Si non, retirer l'avion du ciel avec .supprCiel(numSerie)
             // ajouter l'avion avec numPiste.ajouter(numSerie)
             // lancement de survoler()

@@ -85,6 +85,7 @@ public class Controleur{
     //TODO:
     //-VÃ©rifier avec numPiste.isOccupee() si la piste est occupÃ©e
     //-Si oui, Ã©crasement de l'avion
+	//->throw new EcrasementAvionException("L'avion n° "+avionsCiel.get(mapKey).getNumSerie()+" s'est écrasé !");
     //-Si non, retirer l'avion du ciel avec .supprCiel(numSerie)
             // ajouter l'avion avec numPiste.ajouter(numSerie)
             // lancement de survoler()

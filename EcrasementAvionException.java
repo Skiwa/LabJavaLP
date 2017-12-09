@@ -4,6 +4,7 @@ public class EcrasementAvionException extends Exception{
 	//surcharger la méthode getMessage()
 	//System.out.println(e.getMessage());
 	
+
 	public EcrasementAvionException(String message) {
         super(message);
     }

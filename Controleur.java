@@ -18,6 +18,8 @@ public class Controleur{
 
 
     while(true){
+      System.out.println();
+      System.out.println("-- Charles Anne-Laure et Haegman Julien --");
       System.out.println("***************************************************");
       System.out.println("Avions en survol :");
       System.out.println(Ciel.afficheCiel());
@@ -43,12 +45,12 @@ public class Controleur{
           inputSerie=sc.next();
           System.out.println("Entrer le no de la piste :");
           inputPiste=sc.next();
-          
+
           atterir(Integer.parseInt(inputSerie),Integer.parseInt(inputPiste),aeroport);
 
         break;
         case "0":
-        	System.out.println("J'ai fini ma journée! Au revoir");
+        	System.out.println("J'ai fini ma journï¿½e! Au revoir");
         	System.exit(0);
         break;
       }
@@ -67,9 +69,9 @@ public class Controleur{
     //Si un avion a plus d'essence, il s'ecrase (lancement exception)
     //Chaque avion atteri sur une piste avance d'un tour
     //Si l'avion est lÃ  depuis 5 tours, la piste se libÃ¨re et avion Ã©liminÃ©
-    //exception avion éliminé
-    //throw new EcrasementAvionException("L'avion n° "+aeroport.getPiste(numPiste).getAvion().getNumSerie()+" sur la piste "+numPiste+" est éliminé");
-	  
+    //exception avion ï¿½liminï¿½
+    //throw new EcrasementAvionException("L'avion nï¿½ "+aeroport.getPiste(numPiste).getAvion().getNumSerie()+" sur la piste "+numPiste+" est ï¿½liminï¿½");
+
 
     //TODO:
     //-Leur enlever 1 d'essence avec .consommeEssence()
@@ -78,15 +80,15 @@ public class Controleur{
   }
 
   public static void atterir(int numSerie, int numPiste, Aeroport aeroport) throws EcrasementAvionException{
-	  
+
 	  if (aeroport.getPiste(numPiste).isOccupee())
-		  throw new EcrasementAvionException("L'avion n° "+Ciel.getAvion(numSerie).getNumSerie()+" s'est écrasé sur l'avion n°"+aeroport.getPiste(numPiste).getAvion().getNumSerie()+" sur la piste "+numPiste);
-	  
+		  throw new EcrasementAvionException("L'avion n "+Ciel.getAvion(numSerie).getNumSerie()+" s'est ecrase sur l'avion n "+aeroport.getPiste(numPiste).getAvion().getNumSerie()+" sur la piste "+numPiste);
+
 	  //ajoute Ã  une piste un avion rÃ©cupÃ©rÃ© du ciel
       aeroport.getPiste(numPiste).ajouter(Ciel.getAvion(numSerie));
       //supprime l'avion du ciel
       Ciel.supprAvion(numSerie);
-      
+
     //TODO:
     //-VÃ©rifier avec numPiste.isOccupee() si la piste est occupÃ©e
     //-Si oui, Ã©crasement de l'avion

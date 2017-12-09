@@ -7,6 +7,6 @@ public interface TourControle{
 	public void atterir(int numSerie, int numPiste);
 	
 	//Faire survoler les avions (passer un tour)
-	public void survoler();
+	public void tourCiel();
   
 }

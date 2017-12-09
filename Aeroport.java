@@ -1,6 +1,3 @@
-//Classe principale
-//L'aéroport contient 3 pistes et tous les avions qui survolent
-//Implementer l'interface LieuAtterrisssage et TourCOntrole
 public class Aeroport{
   static private Piste[] piste=new Piste[3];
 

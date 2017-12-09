@@ -1,6 +1,6 @@
 public class AvionTypeA extends Avion{
 
   public AvionTypeA(int quantiteEssence, int numeroSerie){
-    super(quantiteEssence,1,numeroSerie); //1 = type de l'avion
+    super(quantiteEssence,1,numeroSerie);
   }
 }

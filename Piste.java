@@ -1,6 +1,3 @@
-//Contient 0 à 1 avion
-//Contient les méthodes atterir() et ajouter()
-
 public class Piste{
   private Avion avion;
   private int nbTours;
@@ -20,7 +17,6 @@ public class Piste{
     nbTours++;
   }
 
-  //retourne vrai si un avion est sur la piste
   public boolean isOccupee(){
     return(this.avion==null) ? false : true;
   }

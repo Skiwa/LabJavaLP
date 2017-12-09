@@ -23,15 +23,12 @@ public class Ciel extends Thread{
           if(typeAvion==1){
             AvionTypeA avion=new AvionTypeA(quantiteEssence,numeroSerie);
             avionsCiel.put(numeroSerie,avion);
-            // System.out.println(avion.toString());
           }else if(typeAvion==2){
             AvionTypeB avion=new AvionTypeB(quantiteEssence,numeroSerie);
             avionsCiel.put(numeroSerie,avion);
-            // System.out.println(avion.toString());
           }else{
             AvionTypeC avion=new AvionTypeC(quantiteEssence,numeroSerie);
             avionsCiel.put(numeroSerie,avion);
-            // System.out.println(avion.toString());
           }
           //Pause entre chaque g√©n√©ration
           int sleep=(int) Math.floor(Math.random() * 5000);
@@ -54,10 +51,8 @@ public class Ciel extends Thread{
         for (Integer mapKey : avionsCiel.keySet()) {
         	avionsCiel.get(mapKey).consommeEssence();
 
-          //TODO: G√©rer une exception si le niveau d'essence est √† 0
-
         	if(avionsCiel.get(mapKey).getEssence() <= 0){
-        		throw new EcrasementAvionException("L'avion n∞ "+avionsCiel.get(mapKey).getNumSerie()+" s'est ÈcrasÈ !");
+        		throw new EcrasementAvionException("L'avion n "+avionsCiel.get(mapKey).getNumSerie()+" s'est ecrase !");
         	}
         }
 

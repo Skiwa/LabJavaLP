@@ -36,12 +36,7 @@ public class Controleur{
       input=sc.next();
       switch(input){
         case "1":
-          //TODO: Ranger ca dans la fonction survoler()
-          //--
-          //Fait consommer de l'essence √† tous les avions et lance une exception si essence=0
-          Ciel.tourCiel();
-          //Fait avancer tous les avions sur les pistes
-          aeroport.tourPistes();
+        	survoler(aeroport);
         break;
         case "2":
           System.out.println("Entrer le noSerie de l'avion :");
@@ -53,25 +48,32 @@ public class Controleur{
 
         break;
         case "0":
-          //stuff
+        	System.out.println("J'ai fini ma journÈe! Au revoir");
+        	System.exit(0);
         break;
       }
     }
     //
   }
 
-  public static void survoler() throws EcrasementAvionException{
+  public static void survoler(Aeroport aeroport) throws EcrasementAvionException{
+
+  //Fait consommer de l'essence √† tous les avions et lance une exception si essence=0
     Ciel.tourCiel();
+    //Fait avancer tous les avions sur les pistes
+    aeroport.tourPistes();
 
     //Fait survoler tous les avions
     //Si un avion a plus d'essence, il s'ecrase (lancement exception)
     //Chaque avion atteri sur une piste avance d'un tour
     //Si l'avion est l√† depuis 5 tours, la piste se lib√®re et avion √©limin√©
+    //exception avion ÈliminÈ
+    //throw new EcrasementAvionException("L'avion n∞ "+aeroport.getPiste(numPiste).getAvion().getNumSerie()+" sur la piste "+numPiste+" est ÈliminÈ");
+	  
 
     //TODO:
     //-Leur enlever 1 d'essence avec .consommeEssence()
     //-Ecrasement de l'avion si plus d'essence, verification avec .getEssence()
-    //Renvoyer l'exception si Ècrasement de l'avion 
     //-Pour chaque piste, faire avancer l'avion d'un tour avec piste[i].tour()
   }
 
@@ -80,12 +82,11 @@ public class Controleur{
 	  if (aeroport.getPiste(numPiste).isOccupee())
 		  throw new EcrasementAvionException("L'avion n∞ "+Ciel.getAvion(numSerie).getNumSerie()+" s'est ÈcrasÈ sur l'avion n∞"+aeroport.getPiste(numPiste).getAvion().getNumSerie()+" sur la piste "+numPiste);
 	  
-	//ajoute √† une piste un avion r√©cup√©r√© du ciel
+	  //ajoute √† une piste un avion r√©cup√©r√© du ciel
       aeroport.getPiste(numPiste).ajouter(Ciel.getAvion(numSerie));
       //supprime l'avion du ciel
       Ciel.supprAvion(numSerie);
       
-
     //TODO:
     //-V√©rifier avec numPiste.isOccupee() si la piste est occup√©e
     //-Si oui, √©crasement de l'avion

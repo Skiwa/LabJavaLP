@@ -15,7 +15,7 @@ public class Ciel extends Thread{
       try{
         while(true){
           //Génération aléatoire de l'essence, du num de série et du type
-          int quantiteEssence=(int) Math.floor(Math.random() * 10)+1;
+          int quantiteEssence=(int) Math.floor(Math.random() * 5)+5;
           int numeroSerie=(int) Math.floor(Math.random() * 10000)+1;
           int typeAvion=(int) Math.floor(Math.random() * 3) +1;
 
@@ -55,7 +55,7 @@ public class Ciel extends Thread{
         	avionsCiel.get(mapKey).consommeEssence();
         	
           //TODO: Gérer une exception si le niveau d'essence est à 0
-        	if(avionsCiel.get(mapKey).getEssence() < 0){
+        	if(avionsCiel.get(mapKey).getEssence() <= 0){
         		throw new EcrasementAvionException("L'avion n� "+avionsCiel.get(mapKey).getNumSerie()+" s'est �cras� !");
         	}
         }

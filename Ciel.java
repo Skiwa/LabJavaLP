@@ -53,8 +53,9 @@ public class Ciel extends Thread{
     public static void tourCiel() throws EcrasementAvionException{
         for (Integer mapKey : avionsCiel.keySet()) {
         	avionsCiel.get(mapKey).consommeEssence();
-        	
+
           //TODO: GÃ©rer une exception si le niveau d'essence est Ã  0
+
         	if(avionsCiel.get(mapKey).getEssence() <= 0){
         		throw new EcrasementAvionException("L'avion n° "+avionsCiel.get(mapKey).getNumSerie()+" s'est écrasé !");
         	}
